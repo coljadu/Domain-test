@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agenda widget embed test</title>
+<style>
+  body { margin: 0; font-family: Arial, sans-serif; background: #f6f3ee; color: #222; }
+  header { background: #1f3b4d; color: #fff; padding: 16px 24px; }
+  header small { display: block; opacity: .8; margin-top: 4px; font-family: monospace; }
+  main { max-width: 1100px; margin: 0 auto; padding: 16px; }
+  .box { background: #fff; border: 2px dashed #b9a; padding: 8px; }
+  .two-col { display: grid; grid-template-columns: 1fr 360px; gap: 24px; margin-top: 32px; }
+  @media (max-width: 800px) { .two-col { grid-template-columns: 1fr; } }
+  footer { background: #222; color: #aaa; text-align: center; padding: 24px; font-size: 13px; }
+</style>
+</head>
+<body>
+<header>
+  <strong>Embed test site</strong>
+  <small id="origin"></small>
+</header>
+<main>
+  <h1>Event agenda</h1>
+  <p>Text above the widget, to check spacing and fonts on a normal page.</p>
+
+  <h2>1. Full width</h2>
+  <div class="box">
+    <script async src="https://soundinvestmentav.dev.evntstack.com/widget-embed.js" data-widget-url="https://soundinvestmentav.dev.evntstack.com/embed/events/testin-session-format-1767710210312/agenda/widget?widget=fa63b28e-a887-44ac-9789-206b5aa7ac22"></script>
+  </div>
+  <p>Text below the widget, to check the frame height doesn't overlap the page.</p>
+
+  <h2>2. Narrow sidebar (360px)</h2>
+  <div class="two-col">
+    <div><p>Main column text. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div>
+    <aside class="box">
+      <script async src="https://soundinvestmentav.dev.evntstack.com/widget-embed.js" data-widget-url="https://soundinvestmentav.dev.evntstack.com/embed/events/testin-session-format-1767710210312/agenda/widget?widget=fa63b28e-a887-44ac-9789-206b5aa7ac22"></script>
+    </aside>
+  </div>
+</main>
+<footer>Test page</footer>
+<script>document.getElementById('origin').textContent = 'This page: ' + location.origin;</script>
+</body>
+</html>
